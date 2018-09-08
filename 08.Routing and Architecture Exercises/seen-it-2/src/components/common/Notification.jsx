@@ -1,7 +1,5 @@
 import React from 'react';
-
 import observer from '../../Infrastructure/observer'
-
 
 export default class extends React.Component {
     constructor(props) {
@@ -51,5 +49,4 @@ export default class extends React.Component {
 
         return null;
     }
-
 }

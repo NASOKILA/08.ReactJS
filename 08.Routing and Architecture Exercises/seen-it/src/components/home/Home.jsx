@@ -1,11 +1,11 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import LoginForm from '../user/LoginForm'
 import RegisterForm from '../user/RegisterForm'
 import About from '../home/About';
 
 export default class Home extends Component {
 
-    render(){
+    render() {
         return (
             <div>
                 <section id="viewWelcome">
@@ -18,6 +18,6 @@ export default class Home extends Component {
                     </div>
                 </section>
             </div>
-        ) 
+        )
     }
 }

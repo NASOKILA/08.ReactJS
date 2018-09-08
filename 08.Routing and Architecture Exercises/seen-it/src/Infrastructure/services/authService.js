@@ -1,4 +1,3 @@
-
 let auth = (() => {
 
     function isAuth() {
@@ -11,12 +10,11 @@ let auth = (() => {
         sessionStorage.setItem('userId', userData._id);
     }
 
+    function register(username, password) {
 
-    function register (username, password) {
-        
         const endPoint = 'login';
         const authorization = 'basic';
-        
+
         let requestBody = { username, password };
 
         return remote.post('user', endPoint, authorization, requestBody);
@@ -27,10 +25,10 @@ let auth = (() => {
         const endPoint = 'login';
         const authorization = 'basic';
         let requestBody = { username, password };
-        
+
         return remote.post('user', endPoint, authorization, requestBody)
     }
-    
+
     function logout() {
         const endPoint = '_logout';
         const authorization = 'kinvey';

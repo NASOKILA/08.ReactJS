@@ -12,7 +12,7 @@ export default class Navigation extends Component {
     }
 
     render() {
-        return (    
+        return (
             <div id="menu">
                 <div className="title">Navigation</div>
                 <a className="nav" href="/submit-link">Submit Link</a>

@@ -14,32 +14,30 @@ export default class RegisterForm extends Component {
 
     handleChange = (ev) => {
 
-            let key = ev.target.name;
-            let value = ev.target.value;
-            
-            this.setState({
-                [key]:value
-            })
-        
+        let key = ev.target.name;
+        let value = ev.target.value;
+
+        this.setState({
+            [key]: value
+        })
     }
 
     handleSubmit = (ev) => {
         ev.preventDefault();
 
-        if(this.state.password !== this.state.repeatPassword
-            || this.state.password === null 
-            || this.state.repeatPassword === null 
+        if (this.state.password !== this.state.repeatPassword
+            || this.state.password === null
+            || this.state.repeatPassword === null
             || this.state.username === null
 
-            || this.state.password.length < 3 
-            || this.state.repeatPassword.length < 3 
-            || this.state.username.length < 3)
-        {}
+            || this.state.password.length < 3
+            || this.state.repeatPassword.length < 3
+            || this.state.username.length < 3) { }
         else {
-            requester.post('user', '', 'basic', {'username' : this.state.username, 'password' : this.state.password})
-            .then(res => {
-                console.log(res);    
-            })
+            requester.post('user', '', 'basic', { 'username': this.state.username, 'password': this.state.password })
+                .then(res => {
+                    console.log(res);
+                })
         }
     }
 

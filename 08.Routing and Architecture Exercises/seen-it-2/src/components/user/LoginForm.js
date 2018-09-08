@@ -1,5 +1,4 @@
-import React, {Component} from 'react';
-//import {Redirect} from 'react';
+import React, { Component } from 'react';
 import requester from '../../Infrastructure/remote'
 import observer from '../../Infrastructure/observer';
 
@@ -15,7 +14,7 @@ export default class LoginForm extends Component {
     }
 
     handleChange = (ev) => {
-        
+
         let fieldName = ev.target.name;
         let fieldValue = ev.target.value;
 
@@ -32,25 +31,25 @@ export default class LoginForm extends Component {
                 console.log(res)
                 sessionStorage.setItem('authtoken', res._kmd.authtoken);
                 localStorage.setItem('username', res.username);
-                observer.trigger(observer.events.loginUser, res.username);    
-                observer.trigger(observer.events.notification, {success: true, message: "LoggedIn Successfully!", type: 'success'})
+                observer.trigger(observer.events.loginUser, res.username);
+                observer.trigger(observer.events.notification, { success: true, message: "LoggedIn Successfully!", type: 'success' })
                 this.props.history.push('/catalog')
             })
-            .catch(res => observer.trigger(observer.events.notification, {error: true, message: "Invalid User Credentials!", type: 'error'}));        
+            .catch(res => observer.trigger(observer.events.notification, { error: true, message: "Invalid User Credentials!", type: 'error' }));
 
-        }
+    }
 
-    render(){
+    render() {
 
-        return (  
-        <form id="loginForm" onSubmit={this.handleSubmit}>     
-            <h2>Sign In</h2>
-            <label>Username:</label>
-            <input onChange={this.handleChange} name="username" type="text" />
-            <label>Password:</label>
-            <input onChange={this.handleChange} name="password" type="password" />
-            <input id="btnLogin" value="Sign In" type="submit" />
-        </form>
+        return (
+            <form id="loginForm" onSubmit={this.handleSubmit}>
+                <h2>Sign In</h2>
+                <label>Username:</label>
+                <input onChange={this.handleChange} name="username" type="text" />
+                <label>Password:</label>
+                <input onChange={this.handleChange} name="password" type="password" />
+                <input id="btnLogin" value="Sign In" type="submit" />
+            </form>
         )
     }
 }

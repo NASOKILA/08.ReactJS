@@ -1,7 +1,6 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import requester from '../../Infrastructure/remote'
 import observer from '../../Infrastructure/observer';
-//import '../../styles/submit.css'
 
 export default class LoginForm extends Component {
 
@@ -15,7 +14,7 @@ export default class LoginForm extends Component {
     }
 
     handleChange = (ev) => {
-        
+
         let fieldName = ev.target.name;
         let fieldValue = ev.target.value;
 
@@ -32,21 +31,21 @@ export default class LoginForm extends Component {
                 console.log(res)
                 sessionStorage.setItem('authtoken', res._kmd.authtoken);
                 localStorage.setItem('username', res.username);
-                observer.trigger(observer.events.loginUser, res.username);    
-            });        
+                observer.trigger(observer.events.loginUser, res.username);
+            });
     }
 
-    render(){
+    render() {
 
         return (
-        <form id="loginForm" onSubmit={this.handleSubmit}>
-            <h2>Sign In</h2>
-            <label>Username:</label>
-            <input onChange={this.handleChange} name="username" type="text" />
-            <label>Password:</label>
-            <input onChange={this.handleChange} name="password" type="password" />
-            <input id="btnLogin" value="Sign In" type="submit" />
-        </form>)
+            <form id="loginForm" onSubmit={this.handleSubmit}>
+                <h2>Sign In</h2>
+                <label>Username:</label>
+                <input onChange={this.handleChange} name="username" type="text" />
+                <label>Password:</label>
+                <input onChange={this.handleChange} name="password" type="password" />
+                <input id="btnLogin" value="Sign In" type="submit" />
+            </form>)
     }
 }
 
