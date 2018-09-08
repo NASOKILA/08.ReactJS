@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 
 function withAuthorization(WrappedComponent, roles) {
     return class WithAuthorization extends Component {
@@ -12,7 +12,7 @@ function withAuthorization(WrappedComponent, roles) {
         componentDidMount = () => {
             let roles = sessionStorage.getItem('userRoles')
             if (roles) {
-                this.setState({ roles : roles.split(',') });
+                this.setState({ roles: roles.split(',') });
             }
         }
 

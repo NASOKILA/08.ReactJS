@@ -1,4 +1,4 @@
-import React, {Component, Fragment} from 'react';
+import React, { Component, Fragment } from 'react';
 
 import Navigation from '../common/Navigation';
 import requester from '../../infrastructure/requester'
@@ -35,8 +35,8 @@ export default class PostDetailsContainer extends Component {
             .then(res => {
                 this.setState(prevState => {
                     prevState.comments.splice(commentIndex, 1);
-        
-                    return { comments : prevState.comments }
+
+                    return { comments: prevState.comments }
                 })
             })
             .catch(console.log);
@@ -49,7 +49,8 @@ export default class PostDetailsContainer extends Component {
                 this.setState({
                     createdOn: res._kmd.ect,
                     ...res
-            })})
+                })
+            })
             .catch(console.log);
 
         requester.get('appdata', 'comments', 'kinvey', { postId })
@@ -75,12 +76,12 @@ export default class PostDetailsContainer extends Component {
                                 {this.state.description}
                             </div>
                             <span>
-                                {postService.createdBeforeDays(this.state.createdOn)} by {this.state.author} 
+                                {postService.createdBeforeDays(this.state.createdOn)} by {this.state.author}
                             </span>
                         </div>
                     </article>
-            
-                    <CommentForm extraState={{postId: this.state._id}} success={this.addComment} />
+
+                    <CommentForm extraState={{ postId: this.state._id }} success={this.addComment} />
 
                     <CommentsList comments={this.state.comments} remove={this.removeComment} />
 

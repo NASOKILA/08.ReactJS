@@ -8,8 +8,8 @@ export default {
         loginUser: 'loginUser',
         notification: 'notification'
     },
-    subscribe: (eventName, fn) => 
+    subscribe: (eventName, fn) =>
         subscriptions[eventName].push(fn),
-    trigger: (eventName, data) => 
+    trigger: (eventName, data) =>
         subscriptions[eventName].forEach(fn => fn(data))
 }

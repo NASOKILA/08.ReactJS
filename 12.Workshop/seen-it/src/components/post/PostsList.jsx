@@ -13,7 +13,7 @@ export default class PostsList extends Component {
     getPosts = () =>
         requester.get('appdata', 'posts', 'kinvey')
             .then(res => {
-               this.setState({ posts: res })
+                this.setState({ posts: res })
             });
 
     componentDidMount = () => this.getPosts();

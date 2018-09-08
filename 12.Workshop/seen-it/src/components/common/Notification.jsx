@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import observer from '../../infrastructure/observer';
 import '../../styles/notifications.css';
 
@@ -14,11 +14,11 @@ export default class Notification extends Component {
         super(props);
         this.state = DEFAULT_STATE;
 
-        observer.subscribe(observer.events.notification, this.showNotification); 
+        observer.subscribe(observer.events.notification, this.showNotification);
     }
 
     showNotification = data => {
-        let message= data.message;
+        let message = data.message;
         let type = data.type;
         this.setState({ [type]: type, message: message });
     }
@@ -44,5 +44,4 @@ export default class Notification extends Component {
             return null;
         }
     }
-
 }

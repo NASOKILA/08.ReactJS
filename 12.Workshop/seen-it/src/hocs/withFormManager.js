@@ -1,8 +1,8 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 function getRequestData(state, defaultState) {
     let data = {};
-    
+
     for (let key of Object.keys(defaultState)) {
         data[key] = state[key];
     }
@@ -41,12 +41,12 @@ export default function withFormManager(Form, model, submitter) {
             let fieldName = ev.target.name;
             let fieldValue = ev.target.value;
 
-            this.setState({ [fieldName] : fieldValue });
+            this.setState({ [fieldName]: fieldValue });
         }
 
         handleSubmit = ev => {
             ev.preventDefault();
-            
+
             let data = getRequestData(this.state, this.dataModel);
 
             if (model.validate) {
@@ -55,7 +55,7 @@ export default function withFormManager(Form, model, submitter) {
                     this.setState({ error })
                 }
             }
-            
+
             submitter.send(data)
                 .then(this.success)
                 .catch(this.fail);

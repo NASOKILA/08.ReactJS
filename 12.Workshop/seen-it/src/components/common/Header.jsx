@@ -1,8 +1,7 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import '../../styles/header.css';
 import observer from '../../infrastructure/observer';
-
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default class Header extends Component {
     constructor(props) {
@@ -16,7 +15,7 @@ export default class Header extends Component {
         this.setState({ username });
 
     render = () => {
-        const loggedInSection =  
+        const loggedInSection =
             <div id="profile">
                 <span id="username">Hello, {this.state.username}!</span>|
                 <Link to="/logout">logout</Link>

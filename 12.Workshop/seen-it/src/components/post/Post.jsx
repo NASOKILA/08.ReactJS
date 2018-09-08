@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom';
-
+import { Link } from 'react-router-dom';
 import postService from '../../services/postService'
 
 export default class Post extends Component {

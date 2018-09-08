@@ -4,7 +4,7 @@ export default {
         password: ''
     },
     validate: obj => {
-        const {username, password} = obj;
+        const { username, password } = obj;
 
         if (!username) {
             return "Username is required";

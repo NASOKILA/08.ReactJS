@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 
 export default class Comment extends Component {
     render = () => {
@@ -6,12 +6,12 @@ export default class Comment extends Component {
         return (
             <article className="comment">
                 <div className="comment-content">
-                   {this.props.content}
+                    {this.props.content}
                 </div>
-                <a href="#" 
-                   data-comment-index={this.props.index} 
-                   className="action" 
-                   onClick={this.props.remove}>
+                <a href="#"
+                    data-comment-index={this.props.index}
+                    className="action"
+                    onClick={this.props.remove}>
                     [Delete]
                 </a>
             </article>

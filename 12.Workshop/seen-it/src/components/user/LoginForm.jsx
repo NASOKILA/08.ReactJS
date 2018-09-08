@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 import withFormManager from './../../hocs/withFormManager';
 import userModel from '../../models/userModel'
@@ -7,7 +7,7 @@ import userService from '../../services/userService'
 class LoginForm extends Component {
     render = () => {
         return (
-             <form id="loginForm" onSubmit={this.props.handleSubmit}>
+            <form id="loginForm" onSubmit={this.props.handleSubmit}>
                 <h2>Sign In</h2>
                 <span if="form-error">{this.props.error}</span>
                 <label>Username:</label>
