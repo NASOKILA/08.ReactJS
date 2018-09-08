@@ -19,7 +19,6 @@ app.use(cors())
 passport.use('local-signup', localSignupStrategy)
 passport.use('local-login', localLoginStrategy)
 
-// routes
 app.use('/auth', authRoutes)
 app.use('/pokedex', authPokedex)
 

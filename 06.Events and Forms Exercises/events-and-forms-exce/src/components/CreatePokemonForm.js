@@ -5,9 +5,6 @@ import Error from './Error'
 export default class CreatePokemonForm extends React.Component {
     constructor(props) {
         super(props);
-
-
-
         this.state = {
             pokemon: {
                 pokemonName: '',
@@ -34,21 +31,19 @@ export default class CreatePokemonForm extends React.Component {
         let key = e.target.name;
         let value = e.target.value;
 
-
         let newPokemon = {};
         newPokemon[key] = value;
 
         this.setState({
             pokemon: Object.assign(this.state.pokemon, newPokemon)
         })
-
     }
 
     isFormValid(e) {
 
         let pokemon = this.state.pokemon;
         if (pokemon.pokemonName === "") {
-            
+
             let error = {};
             error.state = true;
             error.message = "Pokemon name is required !";
@@ -60,7 +55,7 @@ export default class CreatePokemonForm extends React.Component {
             return false;
         }
         else if (pokemon.pokemonInfo === "") {
-            
+
             let error = {};
             error.state = true;
             error.message = "Pokemon description is required !";
@@ -78,10 +73,9 @@ export default class CreatePokemonForm extends React.Component {
 
     submit(e) {
 
-        
+
         if (this.isFormValid(e)) {
 
-            //we have to send a post request to http://localhost:5000/auth/login to Login
             fetch('http://localhost:5000/pokedex/create', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -92,8 +86,7 @@ export default class CreatePokemonForm extends React.Component {
                     console.log(res)
                 });
         }
-        else
-        {
+        else {
             e.preventDefault();
         }
     }
@@ -114,11 +107,7 @@ export default class CreatePokemonForm extends React.Component {
                     pokemons
                 })
             });
-
     }
-
-
-
 
     render() {
         return (
@@ -128,7 +117,7 @@ export default class CreatePokemonForm extends React.Component {
                 <h1>Welcome, {localStorage.getItem('username')}</h1>
                 <br />
 
-                {this.state.error.state ? <Error output={this.state.error.message} /> :  ""   }
+                {this.state.error.state ? <Error output={this.state.error.message} /> : ""}
                 <form onSubmit={this.submit}>
 
                     <h1>Add Pokemon</h1>

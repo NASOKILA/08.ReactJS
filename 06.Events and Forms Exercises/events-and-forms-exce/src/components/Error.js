@@ -1,17 +1,15 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 class Error extends Component {
-    constructor(props){
+    constructor(props) {
         super(props)
     }
 
-
     render() {
-        return(
+        return (
             <h1 className="alert-danger">{this.props.output}</h1>
         )
     }
-
 }
 
 export default Error;

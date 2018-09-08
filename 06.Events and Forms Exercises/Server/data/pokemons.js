@@ -1,10 +1,10 @@
 const pokemons = []
 
 module.exports = {
-    addPokem:(data)=>{
+    addPokem: (data) => {
         pokemons.push(data)
     },
-    retrivePokemons:()=>{
+    retrivePokemons: () => {
         console.log('hello from database')
         return pokemons
     }

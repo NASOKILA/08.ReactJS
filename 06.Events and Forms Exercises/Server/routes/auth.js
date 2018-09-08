@@ -4,7 +4,7 @@ const validator = require('validator')
 
 const router = new express.Router()
 
-function validateSignupForm (payload) {
+function validateSignupForm(payload) {
   const errors = {}
   let isFormValid = true
   let message = ''
@@ -14,7 +14,7 @@ function validateSignupForm (payload) {
     errors.email = 'Please provide a correct email address.'
   }
 
-  if (!payload || typeof payload.password !== 'string' || payload.password.trim().length <8) {
+  if (!payload || typeof payload.password !== 'string' || payload.password.trim().length < 8) {
     isFormValid = false
     errors.password = 'Password must have at least 8 characters.'
   }
@@ -35,7 +35,7 @@ function validateSignupForm (payload) {
   }
 }
 
-function validateLoginForm (payload) {
+function validateLoginForm(payload) {
   const errors = {}
   let isFormValid = true
   let message = ''
@@ -62,8 +62,6 @@ function validateLoginForm (payload) {
 }
 
 router.post('/signup', (req, res, next) => {
-  console.log(req.body)
-  
 
   const validationResult = validateSignupForm(req.body)
   if (!validationResult.success) {
@@ -90,7 +88,7 @@ router.post('/signup', (req, res, next) => {
 })
 
 router.post('/login', (req, res, next) => {
-  console.log(req.body)
+
   const validationResult = validateLoginForm(req.body)
   if (!validationResult.success) {
     return res.status(200).json({
