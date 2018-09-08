@@ -3,52 +3,47 @@ import withLoading from '../helpers/withLoading';
 
 class ComponentWithData extends React.Component {
 
-    constructor(props){
+    constructor(props) {
         super(props);
 
         this.state = {
             ready: false,
-            data:[]
+            data: []
         }
     }
 
-    componentDidMount(){
+    componentDidMount() {
 
-        if(this.props.data)
-        {
+        if (this.props.data) {
             const data = this.props.data;
-        
+
             console.log(data);
 
             this.setState({
-                ready : true,
+                ready: true,
                 data
             })
         }
     }
 
-    render(){
+    render() {
 
-        if(this.state.ready)
-        {
+        if (this.state.ready) {
 
-            return(
+            return (
                 <ul>
                     {this.props.data.map(i => {
-                            alert('hi')
-                            return <li id="item" key={i.id}>{i.name}</li>
+                        alert('hi')
+                        return <li id="item" key={i.id}>{i.name}</li>
                     })}
                 </ul>
-            ) 
+            )
         }
-        
-        return (<h1>Data Not Found</h1>)
 
-        
+        return (<h1>Data Not Found</h1>)
     }
 }
 
 const ComponentResult = withLoading(ComponentWithData);
 
 export default ComponentResult;
- 
