@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import requester from '../../Infrastructure/remote';
 
-
 export default class OrderCompleted extends Component {
 
     constructor(props) {
@@ -17,8 +16,8 @@ export default class OrderCompleted extends Component {
     componentDidMount = () => this.sethouseState();
 
     sethouseState = () => {
-        let id = this.props.match.params.id;
 
+        let id = this.props.match.params.id;
 
         requester.get('appdata', 'Houses/' + id, 'kinvey')
             .then(house => {
@@ -33,7 +32,6 @@ export default class OrderCompleted extends Component {
                 })
                     .then(updatedHouse => {
 
-
                         requester.get("appdata", "Orders", "kinvey")
                             .then((orders) => {
 
@@ -45,15 +43,12 @@ export default class OrderCompleted extends Component {
                                     && o.Customer === localStorage.getItem("username"))) {
                                     console.log("order exists")
                                     orderExists = true;
-                                    
-
 
                                     let order = orders.filter(o => o.Product.Location === house.Location
                                         && o.Product.Description === house.Description
                                         && o.Product.Image === house.Image
                                         && o.Customer === localStorage.getItem("username"))[0];
-                                    
-                                    //get order
+
                                     this.setState({
                                         message: "Congratulations Order Created Successfully !",
                                         order

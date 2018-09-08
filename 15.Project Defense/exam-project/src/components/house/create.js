@@ -29,32 +29,32 @@ export default class Create extends Component {
     handleSubmit = (ev) => {
         ev.preventDefault();
 
-        if (this.state.Location === null || this.state.Location.trim() === ""){
+        if (this.state.Location === null || this.state.Location.trim() === "") {
             this.setState({
                 message: "Location cannot be null or empry string !"
             })
         }
-        else if(this.state.Price === null || this.state.Price.trim() === ""){
+        else if (this.state.Price === null || this.state.Price.trim() === "") {
             this.setState({
                 message: "Price cannot be null or empry string !"
             })
         }
-        else if(Number(this.state.Price) < 0){
+        else if (Number(this.state.Price) < 0) {
             this.setState({
                 message: "Price cannot be a number less than 0 !"
             })
         }
-        else if(this.state.Size === null || this.state.Size.trim() === "") {
+        else if (this.state.Size === null || this.state.Size.trim() === "") {
             this.setState({
                 message: "Size cannot be null or empry string !"
             })
         }
-        else if(Number(this.state.Size) < 0){
+        else if (Number(this.state.Size) < 0) {
             this.setState({
                 message: "Size cannot be a number less than 0 !"
             })
         }
-        else if(this.state.Description === null || this.state.Description.trim() === ""){
+        else if (this.state.Description === null || this.state.Description.trim() === "") {
             this.setState({
                 message: "Description cannot be null or empry string !"
             })
@@ -88,8 +88,8 @@ export default class Create extends Component {
 
         return (
             <div>
-                <br/>
-                <br/>
+                <br />
+                <br />
                 <main className="mt-3">
                     <h1 className="text-center">Create House</h1>
                     <hr className="bg-secondary half-width" />
@@ -99,27 +99,27 @@ export default class Create extends Component {
                             <label htmlFor="name">Location</label>
                             <input type="text" onChange={this.handleChange} className="form-control" id="name" placeholder="Location..." name="Location" />
                         </div>
-                        <br/>
+                        <br />
                         <div className="form-group">
                             <label htmlFor="price">Price</label>
                             <input type="number" onChange={this.handleChange} className="form-control" id="price" placeholder="Price..." name="Price" />
                         </div>
-                        <br/>
+                        <br />
                         <div className="form-group">
                             <label htmlFor="description">Size</label>
                             <input type="text" onChange={this.handleChange} className="form-control" id="size" placeholder="Size meters..." name="Size" />
                         </div>
-                        <br/>
+                        <br />
                         <div className="form-group">
                             <label htmlFor="description">Image</label>
                             <input type="text" onChange={this.handleChange} className="form-control" id="image" placeholder="Image..." name="Image" />
                         </div>
-                        <br/>
+                        <br />
                         <div className="form-group">
                             <label htmlFor="description">Description</label>
                             <textarea rows="4" cols="50" type="text" onChange={this.handleChange} className="form-control" id="description" placeholder="Description..." name="Description"></textarea>
                         </div>
-                        <br/>
+                        <br />
                         <hr className="bg-secondary half-width" />
 
                         <div className="button-holder d-flex justify-content-center">
@@ -129,8 +129,8 @@ export default class Create extends Component {
                 </main>
                 <br />
                 <h1 className="text-center danger">{this.state.message}</h1>
-                <br/>
-                <br/>
+                <br />
+                <br />
             </div>
 
         )

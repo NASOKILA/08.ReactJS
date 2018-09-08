@@ -57,7 +57,7 @@ export default class Home extends Component {
                     <br />
 
                     <div className="jumbotron container-fluid product-holder">
-                    
+
                         <div className="row d-flex justify-content-around mt-3">
 
                             {this.state.houses.map(h => {

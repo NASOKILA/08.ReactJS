@@ -46,27 +46,27 @@ export default class MyOrders extends Component {
 
                 <main className="mt-3 mb-5">
 
-                <div className="jumbotron detailsDataFromLeft">
-                    <h1 className="text-center">My Orders</h1>
-                    <hr className="hr-2 bg-dark" />
-                </div>
-                <div className="jumbotron detailsData">
-                    <table className="table table-hover houseData">
-                        <thead>
-                            <tr className="table-dark">
-                                <th scope="col">#</th>
-                                <th scope="col">Order Id</th>
-                                <th scope="col">House Id</th>
-                                <th scope="col">Customer</th>
-                                <th scope="col">House Location</th>
-                                <th scope="col">Ordered On</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <br />
-                            <h3 className="text-center">No orders in DB.</h3>
-                        </tbody>
-                    </table>
+                    <div className="jumbotron detailsDataFromLeft">
+                        <h1 className="text-center">My Orders</h1>
+                        <hr className="hr-2 bg-dark" />
+                    </div>
+                    <div className="jumbotron detailsData">
+                        <table className="table table-hover houseData">
+                            <thead>
+                                <tr className="table-dark">
+                                    <th scope="col">#</th>
+                                    <th scope="col">Order Id</th>
+                                    <th scope="col">House Id</th>
+                                    <th scope="col">Customer</th>
+                                    <th scope="col">House Location</th>
+                                    <th scope="col">Ordered On</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <br />
+                                <h3 className="text-center">No orders in DB.</h3>
+                            </tbody>
+                        </table>
                     </div>
                 </main>)
         }

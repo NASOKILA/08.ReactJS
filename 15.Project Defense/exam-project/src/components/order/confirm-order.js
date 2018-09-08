@@ -9,10 +9,7 @@ export default class ConfirmOrder extends Component {
         this.state = {
             house: null
         }
-
     }
-
-
 
     componentDidMount = () => this.sethouseState();
 
@@ -28,9 +25,7 @@ export default class ConfirmOrder extends Component {
             .catch(err => console.log(err));
     }
 
-
     render() {
-
 
         if (this.state.house !== null) {
 

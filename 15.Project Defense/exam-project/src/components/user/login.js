@@ -30,9 +30,6 @@ export default class Login extends Component {
     handleSubmit = (ev) => {
         ev.preventDefault();
 
-
-
-
         requester.post('user', 'login', 'basic', this.state)
             .then(res => {
                 sessionStorage.setItem('authtoken', res._kmd.authtoken);
@@ -48,8 +45,6 @@ export default class Login extends Component {
                 observer.trigger(observer.events.loginUser, res.username);
 
                 observer.trigger(observer.events.notification, { success: true, message: "LoggedIn Successfully!", type: 'success' })
-
-
 
                 this.setState({
                     message: "LoggedIn Successfully!"
@@ -67,8 +62,6 @@ export default class Login extends Component {
 
             });
     }
-
-
 
     render() {
 
@@ -106,7 +99,6 @@ export default class Login extends Component {
                 <br />
 
             </div>
-
         )
     }
 }

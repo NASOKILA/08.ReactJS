@@ -11,20 +11,18 @@ export default class OrderDetails extends Component {
         }
     }
 
-
     deleteOrder = () => {
         let id = this.props.match.params.id;
-        
+
         requester.remove('appdata', 'Orders/' + id, 'kinvey')
             .then(() => {
                 console.log("Order deleted !");
 
                 this.props.history.push('/home')
-                
+
             })
             .catch(err => console.log(err));
     }
-
 
     componentDidMount = () => this.sethouseState();
 

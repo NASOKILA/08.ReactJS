@@ -126,9 +126,6 @@ export default class Details extends Component {
                             </div>
                         </div>
 
-
-
-
                         <div className="jumbotron detailsActions">
                             <h3 className="text-center">Actions</h3>
                             <hr className="hr-2 bg-dark" />
