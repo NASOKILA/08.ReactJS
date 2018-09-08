@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 
 import './css/Sentences.css';
-class Sentences extends Component {
 
+class Sentences extends Component {
     
     render(){
         

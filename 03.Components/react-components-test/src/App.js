@@ -2,26 +2,15 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-//export Welcome like a default
 import Welcome from './components/Welcome';
-
-//export WelcomeFunction in an object becaouse its not a default.
 import { WelcomeFunction } from './components/Welcome';
-
 import Link from './components/Link';
-
 import Sentences from './components/Sentences';
-
 import Timer from './components/Timer';
-
-
 
 class App extends Component {
 
-
-  //This will trigger when we render something on the browser. 
-  componentDidMount()
-  {
+  componentDidMount() {
     console.log('Rendered !!!')
   }
 
@@ -40,8 +29,6 @@ class App extends Component {
           <h1 className="App-title">Welcome to React</h1>
         </header>
 
-
-        {/*The function that acts like a componnt can be called in as a component and as a function*/}
         <Welcome />
         <Welcome title="Atanas" subtitle="Kambitov" />
         <Welcome title="React" subtitle="Framework" />
@@ -57,14 +44,10 @@ class App extends Component {
         <br />
         <br />
 
-      {/*We can use the sentende object like this so the rendering will be easyer.*/}
-        <Sentences {...SentencesObj}/>
+        <Sentences {...SentencesObj} />
         <br />
         <br />
         <Timer />
-
-
-
       </div>
     );
   }
