@@ -5,8 +5,7 @@ const IMAGE_URL = '/episodePreview/';
 
 export default class Slider extends React.Component {
 
-    constructor(props)
-    {
+    constructor(props) {
         super(props);
 
         this.state = {
@@ -15,12 +14,10 @@ export default class Slider extends React.Component {
         }
     }
 
-
-    //we pull data from a server with the fetcher, updates the state
-    fetchEpisode = id => 
-    fetcher.get(IMAGE_URL + id, data => {
-        this.setState(data);
-    });
+    fetchEpisode = id =>
+        fetcher.get(IMAGE_URL + id, data => {
+            this.setState(data);
+        });
 
     componentDidMount = () => {
         this.fetchEpisode(0)
@@ -32,14 +29,14 @@ export default class Slider extends React.Component {
             this.setState(data);
         });
     }
-    
+
     render = () => (
-            <section id="slider">
-                <img className="button"  onClick={() => this.OtherImage(this.state.id - 1)} src="/left.png" title="previous" alt="nav" />
-                <div className="image-container">
-                    <img src={this.state.url} alt="episode" />
-                </div>
-                <img className="button" onClick={() => this.OtherImage(this.state.id + 1)} src="/right.png" title="previous" alt="nav" />
-            </section>
-        );
+        <section id="slider">
+            <img className="button" onClick={() => this.OtherImage(this.state.id - 1)} src="/left.png" title="previous" alt="nav" />
+            <div className="image-container">
+                <img src={this.state.url} alt="episode" />
+            </div>
+            <img className="button" onClick={() => this.OtherImage(this.state.id + 1)} src="/right.png" title="previous" alt="nav" />
+        </section>
+    );
 }
