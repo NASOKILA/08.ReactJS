@@ -29,32 +29,32 @@ export default class Create extends Component {
     handleSubmit = (ev) => {
         ev.preventDefault();
 
-        if (this.state.Location === null || this.state.Location.trim() === ""){
+        if (this.state.Location === null || this.state.Location.trim() === "") {
             this.setState({
                 message: "Location cannot be null or empry string !"
             })
         }
-        else if(this.state.Price === null || this.state.Price.trim() === ""){
+        else if (this.state.Price === null || this.state.Price.trim() === "") {
             this.setState({
                 message: "Price cannot be null or empry string !"
             })
         }
-        else if(Number(this.state.Price) < 0){
+        else if (Number(this.state.Price) < 0) {
             this.setState({
                 message: "Price cannot be a number less than 0 !"
             })
         }
-        else if(this.state.Size === null || this.state.Size.trim() === "") {
+        else if (this.state.Size === null || this.state.Size.trim() === "") {
             this.setState({
                 message: "Size cannot be null or empry string !"
             })
         }
-        else if(Number(this.state.Size) < 0){
+        else if (Number(this.state.Size) < 0) {
             this.setState({
                 message: "Size cannot be a number less than 0 !"
             })
         }
-        else if(this.state.Description === null || this.state.Description.trim() === ""){
+        else if (this.state.Description === null || this.state.Description.trim() === "") {
             this.setState({
                 message: "Description cannot be null or empry string !"
             })
@@ -124,9 +124,9 @@ export default class Create extends Component {
                 </main>
                 <br />
                 <h1 className="text-center danger">{this.state.message}</h1>
-                <br/>
-                <br/>
-                <br/>
+                <br />
+                <br />
+                <br />
             </div>
 
         )

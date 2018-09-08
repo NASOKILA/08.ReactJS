@@ -22,7 +22,7 @@ export default class MyOrders extends Component {
                     .then(users => {
 
                         let user = users.filter(u => u.username === localStorage.getItem("username"))[0];
-                        
+
                         this.setState({
                             orders,
                             user

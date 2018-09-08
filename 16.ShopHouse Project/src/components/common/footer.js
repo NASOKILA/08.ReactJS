@@ -3,8 +3,6 @@ import React, { Component } from 'react'
 export default class Footer extends Component {
 
     render() {
-
-
         return (
             <footer>
                 <div className="footerDiv container-fluid chushka-bg-color">

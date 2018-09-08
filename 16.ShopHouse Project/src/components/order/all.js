@@ -11,9 +11,7 @@ export default class All extends Component {
         }
     }
 
-
     componentDidMount = () => {
-
 
         requester.get('appdata', 'Orders', 'kinvey')
             .then(orders => {
@@ -39,32 +37,31 @@ export default class All extends Component {
             return null;
         }
 
-        if(this.state.orders.length < 1)
-        {
+        if (this.state.orders.length < 1) {
             return (
-                
-            <main className="mt-3 mb-5">
 
-            <h1 className="text-center">All Orders</h1>
-            <hr className="hr-2 bg-dark" />
+                <main className="mt-3 mb-5">
 
-            <table className="table">
-                <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Order Id</th>
-                        <th scope="col">House Id</th>
-                        <th scope="col">Customer</th>
-                        <th scope="col">House Location</th>
-                        <th scope="col">Ordered On</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <br/>
-                    <h1 className="text-center">No orders in DB.</h1>     
-                </tbody>
-            </table>
-        </main>)
+                    <h1 className="text-center">All Orders</h1>
+                    <hr className="hr-2 bg-dark" />
+
+                    <table className="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Order Id</th>
+                                <th scope="col">House Id</th>
+                                <th scope="col">Customer</th>
+                                <th scope="col">House Location</th>
+                                <th scope="col">Ordered On</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <br />
+                            <h1 className="text-center">No orders in DB.</h1>
+                        </tbody>
+                    </table>
+                </main>)
         }
 
         return (
@@ -103,6 +100,5 @@ export default class All extends Component {
                 </table>
             </main>
         )
-
     }
 }

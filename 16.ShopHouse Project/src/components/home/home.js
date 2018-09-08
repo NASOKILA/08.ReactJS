@@ -11,7 +11,6 @@ export default class Home extends Component {
         }
     }
 
-
     setHouses = () => {
 
         requester.get('appdata', 'Houses', 'kinvey')

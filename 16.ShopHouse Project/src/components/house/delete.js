@@ -4,7 +4,7 @@ import requester from '../../Infrastructure/remote';
 
 export default class Delete extends Component {
 
-    constructor(props){
+    constructor(props) {
         super(props);
 
         this.state = {
@@ -16,7 +16,6 @@ export default class Delete extends Component {
             message: ''
         }
     }
-
 
     componentDidMount = () => this.sethouseState();
 
@@ -37,24 +36,24 @@ export default class Delete extends Component {
     }
 
     handleChange = (ev) => {
-            
+
         let key = ev.target.name;
-        let value = ev.target.value;    
-        
+        let value = ev.target.value;
+
         this.setState({
-            [key]:value
+            [key]: value
         })
     }
 
     handleSubmit = (ev) => {
         ev.preventDefault();
 
-           
-            let id = this.props.match.params.id;
-            
-            requester.remove('appdata', 'Houses/' + id, 'Basic')
+
+        let id = this.props.match.params.id;
+
+        requester.remove('appdata', 'Houses/' + id, 'Basic')
             .then(res => {
-                
+
                 this.setState({
                     message: "House Deleted Successfully !"
                 })
@@ -67,12 +66,12 @@ export default class Delete extends Component {
                     message: "Something Went Wrong !"
                 })
             });
-        
+
     }
 
     render() {
-        
-        if(this.state.Location !== null){
+
+        if (this.state.Location !== null) {
 
             return (<div>
                 <main className="mt-3">
@@ -81,7 +80,7 @@ export default class Delete extends Component {
                     <form className="mx-auto half-width" onSubmit={this.handleSubmit}>
                         <div className="form-group">
                             <label htmlFor="name">Location</label>
-                            <input type="text" disabled onChange={this.handleChange} value={this.state.Location} className="form-control" id="name"  placeholder="Location..." name="Location" />
+                            <input type="text" disabled onChange={this.handleChange} value={this.state.Location} className="form-control" id="name" placeholder="Location..." name="Location" />
                         </div>
                         <div className="form-group">
                             <label htmlFor="price">Price</label>
@@ -91,7 +90,7 @@ export default class Delete extends Component {
                             <label htmlFor="description">Size</label>
                             <input type="text" disabled onChange={this.handleChange} value={this.state.Size} className="form-control" id="size" placeholder="Size meters..." name="Size" />
                         </div>
-                        
+
                         <div className="form-group">
                             <label htmlFor="description">Image</label>
                             <input type="text" disabled onChange={this.handleChange} value={this.state.Image} className="form-control" id="image" placeholder="Image..." name="Image" />
@@ -105,22 +104,21 @@ export default class Delete extends Component {
                         <hr className="bg-secondary half-width" />
 
                         <div className="button-holder d-flex justify-content-center">
-                            <input type="submit" value="Delete" className="btn chushka-bg-color"/>
+                            <input type="submit" value="Delete" className="btn chushka-bg-color" />
                         </div>
                     </form>
                 </main>
-                <br/>
+                <br />
                 <h1 className="text-center danger">{this.state.message}</h1>
-                <br/>
-                <br/>
-                <br/>
+                <br />
+                <br />
+                <br />
             </div>)
         }
 
         return (
             <div>
             </div>
-            )
-        
+        )
     }
 }
