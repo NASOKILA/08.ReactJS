@@ -24,15 +24,10 @@ const rootReducer = (state, action) => {
     return state;
   }
   
-
 let store = createStore(rootReducer, initialState);
-
-//import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(
     <Provider store={store}>
         <App /> 
     </Provider>
     , document.getElementById('root'));
-
-//registerServiceWorker();
