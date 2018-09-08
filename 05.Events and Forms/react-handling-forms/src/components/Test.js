@@ -1,26 +1,20 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
-
-export default class Test extends Component
-{
-
-    //We have to set the 'this' keyword 
+export default class Test extends Component {
     constructor(props) {
         super(props)
-            this.onBtnClicked = this.onBtnClicked.bind(this);
+        this.onBtnClicked = this.onBtnClicked.bind(this);
     }
 
-    //we reeive the 'event' automativcally
-    onBtnClicked(event){
+    onBtnClicked(event) {
         console.log(event.target);
         alert(this.props.alertMessage);
     }
 
-    render(){
+    render() {
 
         return (
             <button onClick={this.onBtnClicked}>Click me !</button>
         )
     }
 }       
-

@@ -1,25 +1,24 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import List from '../components/List';
 import ItemForm from '../components/ItemForm';
 
 export default class Container extends Component {
-    
-    constructor(props){
+
+    constructor(props) {
         super(props)
 
         this.state = {
-            items:[]
+            items: []
         }
 
         this.addItem = this.addItem.bind(this);
     }
 
-
-    addItem(itemName){
+    addItem(itemName) {
         this.setState(prevState => {
 
             let items = prevState.items;
-            
+
             items.push({
                 id: itemName.length + 1,
                 name: itemName
@@ -27,16 +26,16 @@ export default class Container extends Component {
         })
     }
 
-    render(){
+    render() {
 
         return (
             <div>
                 {this.props.children[0]}
                 {this.props.children[1]}
-                <br/>
+                <br />
                 <h1>Main Page</h1>
                 <List items={this.state.items} />
-                <ItemForm addItem={this.addItem} name={true}/>
+                <ItemForm addItem={this.addItem} name={true} />
             </div>
         )
     }

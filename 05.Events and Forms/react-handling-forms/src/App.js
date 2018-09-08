@@ -15,14 +15,14 @@ class App extends Component {
         </header>
 
         <div>
-          <Test alertMessage="Alert Message Here !"/> 
-          <br/>
-          <br/>
-          <br/>
+          <Test alertMessage="Alert Message Here !" />
+          <br />
+          <br />
+          <br />
           <RegisterForm />
-          <br/>
-          <br/>
-          <br/>
+          <br />
+          <br />
+          <br />
           <Container>
             <h1>Hello World</h1>
             <h2>From Nasko</h2>
