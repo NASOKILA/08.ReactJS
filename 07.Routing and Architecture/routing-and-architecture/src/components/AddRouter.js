@@ -10,20 +10,15 @@ import PathNotFound from './PathNotFound'
 
 const Router = () => (
     <div>
-
-        {/*If we have two same links it renders the firstOne*/}
         <Switch>
             <Route path="/home" component={Home} />
             <Route path="/" exact component={Home} />
-
-            {/*URL Params:  foodId is an optional parameter */}
             <Route path="/all/:food/:foodId?" component={All} />
-
             <Route path="/add" exact component={Add} />
             <Route path="/about" exact component={About} />
             <Route path="/contacts" exact component={Contacts} />
             <Route path="/path-not-found" component={PathNotFound} />
-            <Redirect to="/path-not-found"/>
+            <Redirect to="/path-not-found" />
         </Switch>
     </div>
 )
