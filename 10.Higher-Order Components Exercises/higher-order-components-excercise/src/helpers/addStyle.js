@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-
 const withWarning = (WrappedComponent) => {
 
     return class extends Component {
@@ -11,7 +10,6 @@ const withWarning = (WrappedComponent) => {
                 warning: null
             }
         }
-
 
         componentDidMount() {
 
@@ -25,21 +23,16 @@ const withWarning = (WrappedComponent) => {
             if (this.state.warning) {
 
                 return (
-
                     <div className="alert">
                         <span className="alert-symbol">&#9888;</span>
                         <WrappedComponent error={this.state.warning} {...this.props} />
                     </div>
-
                 )
             }
 
             return <WrappedComponent />
         }
-
     }
-
 }
 
 export default withWarning;
-
